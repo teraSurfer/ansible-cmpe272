@@ -1,0 +1,12 @@
+- hosts: all
+  gather_facts: false
+  sudo: true
+
+  tasks: 
+  - name: nginx-undeploy
+    apt:
+      name: nginx
+      state: absent
+      autoremove: true
+    become: true 
+

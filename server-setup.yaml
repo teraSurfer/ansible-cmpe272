@@ -1,0 +1,12 @@
+- hosts: all
+  gather_facts: false
+  sudo: yes
+
+  vars: 
+   - MsgFromAnsible: "Hello World!"
+
+  tasks:
+  - name: nginx setup
+    apt: pkg=nginx state=installed update_cache=true
+  - name: index.html copy
+    template: src=index.html.j2 dest=/var/www/html/index.html

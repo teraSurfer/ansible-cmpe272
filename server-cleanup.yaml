@@ -1,0 +1,9 @@
+- hosts: all
+  gather_facts: false
+  sudo: yes
+
+  tasks:
+  - name: nginx stop
+    service: name=nginx state=stopped
+  - name: nginx uninstall
+    apt: pkg=nginx state=absent update_cache=true

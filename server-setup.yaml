@@ -7,6 +7,6 @@
 
   tasks:
   - name: nginx setup
-    apt: pkg=nginx state=installed update_cache=true
+    apt: pkg=nginx state=present update_cache=true
   - name: index.html copy
     template: src=index.html.j2 dest=/var/www/html/index.html
